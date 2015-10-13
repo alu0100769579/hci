@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+ 
+<html lang="es">
+ 
+ 
+ 
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>GAMERS</title>
+
+<style type="text/css">
+    body {
+        background-color:#D6D6D6;
+        background-image:url("c11.jpg");
+        background-repeat:repeat-x;
+        
+    }
+    
+    div#BODY2 {
+        width:1100px;
+        margin-top:18px;
+        margin-left:auto;
+        margin-right:auto;
+        border:2px inset black;
+    }
+    
+    div#cabecera{
+        width:1096px;
+        height:168px;
+        border:2px inset black;
+    }
+    
+    img#izq{
+        float:left;    
+    }
+    
+    img#der{
+        float:right;
+    }
+    
+    h1 {
+        color: black;
+        font:300% sans-serif;
+        text-align:center;
+        margin-top:35px;
+    }
+    
+    h2 {
+        color: black;
+        text-align:center;
+        margin-bottom:50px;
+    }
+    
+    p {
+        font:15px sans-serif;
+        padding:15px;
+        color:black;
+    }
+    
+    p#registro{
+        font:oblique bold 17px sans-serif;
+        padding:15px;
+        color:black;
+    }
+    
+    ul#list {
+        list-style:none;
+        color: black;
+        font:100% sans-serif;
+    }
+    
+    ul#content {
+        color:black;
+        font-weight:normal;
+    }
+    
+    p#NOTA {
+        border:2px outset #f1ae0d;
+        width:60%;
+        margin-left:auto;
+        margin-right:auto;
+        color:#f1ae0d;
+        font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    }
+        
+    p#NOTA a {
+        text-decoration:none;
+        color:#ac7b04;
+    }
+        
+    p#NOTA a:hover {
+        text-decoration:underline;
+    }
+    
+    form#css {
+        padding:15px;
+        font: 14px arial, sans-serif;
+    }
+    
+    img#juegos{
+        float:right;
+        width:62%;
+    }
+    
+    input.a {
+        background-repeat:no-repeat;
+        padding:5px 5px 5px 5px;
+        width:200px;
+    }
+    
+    textarea {
+        width:210px;
+        height:100px;
+    }
+    
+    
+</style>
+</head>
+
+
+
+<body>
+    
+    <div id="BODY2">
+    
+    
+    
+    <div id="cabecera">
+        <img id="izq" src="images.png" />
+        <img id="der" src="images.png" />
+   
+    
+    
+        <h1>The Gamers</h1>
+        <h2>Tú espacio de noticias sobre juegos favorito</h2>
+    
+    </div>
+
+    
+    <p>El mundo del videojuego ya no es lo que era antes. Disfruta de él con nosotros, gracias a ti es posible.</p>
+    <p>Contamos con una gran variedad de secciones para todos los juegadores y plataformas, con noticias, lanzamientos, competiciones, gameplays y mucho más.</p>
+    
+
+    
+    <ul id="list">
+        <li>Disfruta de todo lo que se puede saber de los juegos más populares y competitivos como:
+        
+    <ul id="content">
+        <li>Counter Strike.</li>
+        <li>League of Legends.</li>
+        <li>Grand Theft Auto V.</li>
+        <li>Call of Duty.</li>
+        <li>FIFA.</li>
+        <li>Minecraft.</li>
+    </ul>
+    
+    </li>
+    </ul>
+    
+    
+    
+    
+    
+    
+    <script>
+        function iniciar(){
+            nombre1=document.getElementById("nombre");
+            nombre1.addEventListener("input", validacion, false);
+            
+            apellido=document.getElementById("apellido");
+            apellido.addEventListener("input", validacion, false);
+            
+            email=document.getElementById("email");
+            email.addEventListener("input", validacion, false);
+
+            validacion();
+        }
+        
+        function validacion(){
+            if(nombre1.value==""){
+                nombre1.setCustomValidity('inserte un nombre');
+                nombre1.style.background='#FFDDDD';
+            }
+            else{
+                nombre1.setCustomValidity('');
+                nombre1.style.background='#D1E8ED';
+            }
+        
+            if(apellido.value==""){
+                apellido.setCustomValidity('inserte un apellido');
+                apellido.style.background='#FFDDDD';
+            }
+            else{
+                apellido.setCustomValidity('');
+                apellido.style.background='#D1E8ED';
+            }
+            
+            if(email.value==""){
+                email.setCustomValidity('inserte una direccion de correo valida');
+                email.style.background='#FFDDDD';
+            }
+            else{
+                email.setCustomValidity('');
+                email.style.background='#D1E8ED';
+            }
+        
+        }
+        
+        window.addEventListener("load", iniciar, false);
+    
+    </script>
+    
+    
+    <p id="registro">Registrate ahora para poder acceder a todo el contenido y opciones.</p>
+    
+    <img id="juegos" src="juegos.jpg" />
+    
+    
+    <form id="css" action="pagina2.html" method="get">
+        
+        <table width="400">
+        
+            <tr><td>Nombre</td><td><input class="a" type="text" id="nombre" required></td></tr>
+            <tr><td>Apellido</td><td><input class="a" type="text" id="apellido" required></td></tr>
+            <tr><td>E-mail</td><td><input class="a" type="email" id="email" required pattern="^[-\w.]+@{1}[-a-z0-9]+[.]{1}[a-z]{2,5}$"></td></tr>
+            <tr><td>Nombre de usuario</td><td><input class="a" placeholder="Opcional" type="text"></td></tr>
+            <tr><td>Edad</td><td><input class="a" placeholder="Opcional" type="text" pattern=[0-9][0-9]></td></tr>
+            
+            <tr><td>Sexo</td><td><input type="radio" name="sexo" value="Hombre" required> Hombre <input type="radio" name="sexo" value="Mujer"> Mujer</td></tr>
+            <tr><td>Plataforma</td><td><input type="checkbox" name="plataforma" value"PS"> PS <input type="checkbox" name="plataforma" value="XBOX"> XBOX <input type="checkbox" name="plataforma" value="PC"> PC <input type="checkbox" name="plataforma" value="Otro"> Otro</td></tr>
+            
+            <tr><td>Otros datos</td><td><textarea placeholder="Opcional"></textarea></td></tr>
+            
+            <tr><td></td><td><input type="checkbox" name="Noticias" value="recibir" checked="checked"> Recibir nuestro newsletter</td></tr>
+            <tr><td></td><td><input type="checkbox" name="politica" value="aceptar" required> Acepto la política de privacidad</td></tr>
+            
+            <tr><td></td><td><input type="submit"> <input type="reset"></td></tr>
+            
+        
+        </table>
+       
+    </form>
+    
+    
+    </div>
+</body>
+
+
+
+<footer>
+
+</footer> 
+</html>
